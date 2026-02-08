@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Something Special 🤍</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Segoe UI',sans-serif;
+    }
+    body{
+      height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(135deg,#1f4037,#99f2c8);
+      overflow:hidden;
+      color:white;
+    }
+    .card{
+      background:rgba(0,0,0,0.35);
+      padding:38px 32px;
+      border-radius:22px;
+      text-align:center;
+      box-shadow:0 15px 35px rgba(0,0,0,0.4);
+      animation:pop 1.8s ease;
+      max-width:360px;
+    }
+    h1{
+      font-size:22px;
+      margin-bottom:18px;
+      line-height:1.4;
+    }
+    button{
+      margin-top:10px;
+      padding:10px 18px;
+      border:none;
+      border-radius:20px;
+      background:#ff6b81;
+      color:white;
+      font-size:14px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+    button:hover{
+      background:#ff4757;
+      transform:scale(1.05);
+    }
+    .message{
+      margin-top:18px;
+      font-size:15px;
+      line-height:1.6;
+      display:none;
+      animation:fadeIn 1s ease;
+    }
+    .emoji{
+      font-size:26px;
+      margin-top:15px;
+    }
+    @keyframes pop{
+      from{transform:scale(0.8);opacity:0;}
+      to{transform:scale(1);opacity:1;}
+    }
+    @keyframes fadeIn{
+      from{opacity:0; transform:translateY(10px);}
+      to{opacity:1; transform:translateY(0);}
+    }
+    .float{
+      position:absolute;
+      font-size:22px;
+      animation:floatUp linear infinite;
+      opacity:0.7;
+    }
+    @keyframes floatUp{
+      from{transform:translateY(100vh);}
+      to{transform:translateY(-10vh);}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Something special for cutieee Bandariya... 👻</h1>
+
+    <button onclick="showMessage()">Tap for a message 💌</button>
+
+    <div class="message" id="msg">
+      <strong>Dear Bandariya Diduuu... 😇</strong><br><br>
+      Forever thankful for a bond jo sirf freind se kahin zyada hai —
+      Aap ❤️ se meri behen ho.<br><br>
+      Ab jitna thanku bolu wo km hi hoga... 🤗<br><br>
+      Miss you Forever.... 👻
+      <div class="emoji">🤍✨</div>
+    </div>
+  </div>
+
+  <!-- floating emojis -->
+  <script>
+    function showMessage(){
+      document.getElementById("msg").style.display="block";
+    }
+
+    const emojis = ["💖","✨","🤍","👻"];
+    for(let i=0;i<25;i++){
+      const e=document.createElement("div");
+      e.className="float";
+      e.innerHTML=emojis[Math.floor(Math.random()*emojis.length)];
+      e.style.left=Math.random()*100+"vw";
+      e.style.animationDuration=(4+Math.random()*5)+"s";
+      document.body.appendChild(e);
+    }
+  </script>
+
+</body>
+  </html>
